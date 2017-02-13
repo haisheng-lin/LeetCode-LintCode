@@ -10,7 +10,7 @@ import java.util.Stack;
  */
 public class PreorderTraversal {
 
-    /***************************************** Recursion Version *****************************************/
+    /***************************************** Recursive Version *****************************************/
 
     /**
      * @see <a href="https://leetcode.com/problems/binary-tree-preorder-traversal/">LeetCode</a>

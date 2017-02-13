@@ -11,7 +11,7 @@ public class WordSearch {
      *
      * @param board A list of lists of character
      * @param word A string
-     * @return: True if word exists, else false
+     * @return True if word exists, else false
      */
     public boolean wordSearch(char[][] board, String word) {
         for(int i = 0; i < board.length; i++){

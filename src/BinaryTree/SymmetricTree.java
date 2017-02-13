@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class SymmetricTree {
 
-    /***************************************** Recursion Version *****************************************/
+    /***************************************** Recursive Version *****************************************/
 
     /**
      * @see <a href="https://leetcode.com/problems/symmetric-tree/">LeetCode</a>

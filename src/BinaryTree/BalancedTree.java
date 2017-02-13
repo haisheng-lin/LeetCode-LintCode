@@ -1,11 +1,15 @@
 package BinaryTree;
 
 import ClassPackage.TreeNode;
+import java.util.Stack;
 
 /**
  * Created by Lin on 2017/2/12.
  */
 public class BalancedTree {
+
+    /***************************************** Recursive Version *****************************************/
+
     /**
      * @see <a href="https://leetcode.com/problems/balanced-binary-tree/">LeetCode</a>
      *
@@ -19,7 +23,9 @@ public class BalancedTree {
     }
 
     private int countDepth(TreeNode root){
+        // corner case
         if(root == null) return 0;
+        // next recursion
         return Math.max(countDepth(root.left), countDepth(root.right)) + 1;
     }
 }

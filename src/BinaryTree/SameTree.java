@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class SameTree {
 
-    /***************************************** Recursion Version *****************************************/
+    /***************************************** Recursive Version *****************************************/
 
     /**
      * @see <a href="https://leetcode.com/problems/same-tree/">LeetCode</a>
