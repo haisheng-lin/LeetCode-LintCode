@@ -1,7 +1,6 @@
 package BinaryTree;
 
 import ClassPackage.TreeNode;
-import java.util.Stack;
 
 /**
  * Created by Lin on 2017/2/12.

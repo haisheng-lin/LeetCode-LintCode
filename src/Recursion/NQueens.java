@@ -11,6 +11,8 @@ import java.util.HashSet;
  * Created by Lin on 2017/2/12.
  */
 public class NQueens {
+
+    // characters for split and queen
     final char empty = '.', queen = 'Q';
 
     /**
