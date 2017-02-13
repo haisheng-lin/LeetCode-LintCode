@@ -4,11 +4,11 @@ package Array;
  * Created by Lin on 2017/2/12.
  */
 public class PlusOne {
-    // https://leetcode.com/problems/plus-one/
     /**
-     * @param digits: an Integer array
-     * @return: Integer array, after adding one
-     * https://leetcode.com/problems/plus-one/
+     * @see <a href="https://leetcode.com/problems/plus-one/">LeetCode</a>
+     *
+     * @param digits An Integer array
+     * @return Integer array, after adding one
      */
     public int[] plusOne(int[] digits) {
         boolean add = true;

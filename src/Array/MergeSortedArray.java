@@ -4,12 +4,13 @@ package Array;
  * Created by Lin on 2017/2/12.
  */
 public class MergeSortedArray {
-    // https://leetcode.com/problems/merge-sorted-array/
     /**
-     * @param A: sorted integer array A which has m elements,
+     * @see <a href="https://leetcode.com/problems/merge-sorted-array//">LeetCode</a>
+     *
+     * @param A Sorted integer array A which has m elements,
      *           but size of A is m+n
-     * @param B: sorted integer array B which has n elements
-     * @return: void
+     * @param B Sorted integer array B which has n elements
+     * @return void
      */
     public void mergeSortedArray1(int[] A, int m, int[] B, int n) {
         int index = m + n - 1;

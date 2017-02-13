@@ -8,10 +8,11 @@ import java.util.Arrays;
  * Created by Lin on 2017/2/12.
  */
 public class ThreeSum {
-    // https://leetcode.com/problems/3sum/
     /**
-     * @param nums : Give an array numbers of n integer
-     * @return : Find all unique triplets in the array which gives the sum of zero.
+     * @see <a href="https://leetcode.com/problems/3sum/">LeetCode</a>
+     *
+     * @param nums An array numbers of n integer
+     * @return All unique triplets in the array which gives the sum of zero
      */
     public List<List<Integer>> threeSum(int[] nums){
         List<List<Integer>> res = new ArrayList<>();

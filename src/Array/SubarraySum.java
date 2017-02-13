@@ -9,10 +9,11 @@ import java.util.HashMap;
  * Created by Lin on 2017/2/12.
  */
 public class SubarraySum {
-    // http://www.lintcode.com/en/problem/subarray-sum/
     /**
-     * @param: list of integers
-     * @return: index of first number and last number in the sub-array whose sum is 0
+     * @see <a href="http://www.lintcode.com/en/problem/subarray-sum/">LeetCode</a>
+     *
+     * @param nums List of integers
+     * @return Index of first number and last number in the sub-array whose sum is 0
      */
     public List<Integer> subarraySum(int[] nums){
         List<Integer> list = new ArrayList<>();

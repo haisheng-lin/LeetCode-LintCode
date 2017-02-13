@@ -4,12 +4,12 @@ package Array;
  * Created by Lin on 2017/2/12.
  */
 public class SetMatrixZeros {
-    // https://leetcode.com/problems/set-matrix-zeroes/
     /**
-     * @param matrix: 2D Integer array
-     * @return: void
-     * If an element is 0, set its entire row and column to 0
-     * https://leetcode.com/problems/set-matrix-zeroes/
+     * If an element is 0, set its entire row and column to 0.
+     * @see <a href="https://leetcode.com/problems/set-matrix-zeroes/">LeetCode</a>
+     *
+     * @param matrix 2D Integer array
+     * @return void
      */
     public void setMatrixZeros(int[][] matrix){
         // corner case

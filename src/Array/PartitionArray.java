@@ -4,11 +4,12 @@ package Array;
  * Created by Lin on 2017/2/12.
  */
 public class PartitionArray {
-    // http://www.lintcode.com/en/problem/partition-array/
     /**
-     * @param nums: The integer array you should partition
-     * @param k: As description
-     * @return: The index after partition
+     * @see <a href="http://www.lintcode.com/en/problem/partition-array/">LeetCode</a>
+     *
+     * @param nums The integer array you should partition
+     * @param k As description
+     * @return The index after partition
      */
     public int partitionArray(int[] nums, int k) {
         // this is the method applied in Quick Select

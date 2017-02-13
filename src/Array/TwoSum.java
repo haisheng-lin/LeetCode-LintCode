@@ -7,11 +7,12 @@ import java.util.HashMap;
  * Created by Lin on 2017/2/12.
  */
 public class TwoSum {
-    // https://leetcode.com/problems/two-sum/
     /**
-     * @param nums : An array of Integer
-     * @param target : target = numbers[index1] + numbers[index2]
-     * @return : [index1 + 1, index2 + 1] (index1 < index2)
+     * @see <a href="https://leetcode.com/problems/two-sum/">LeetCode</a>
+     *
+     * @param nums An array of Integer
+     * @param target target = numbers[index1] + numbers[index2]
+     * @return [index1 + 1, index2 + 1] (index1 < index2)
      */
     public int[] twoSum(int[] nums, int target) {
         int[] res = new int[2];

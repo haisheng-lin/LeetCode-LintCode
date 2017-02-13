@@ -7,10 +7,11 @@ import java.util.ArrayList;
  * Created by Lin on 2017/2/12.
  */
 public class ProductExcludeItself {
-    // https://leetcode.com/problems/product-of-array-except-self/
     /**
-     * @param A: Given an integers array A
-     * @return: A Long array B and B[i]= A[0] * ... * A[i-1] * A[i+1] * ... * A[n-1]
+     * @see <a href="https://leetcode.com/problems/product-of-array-except-self/">LeetCode</a>
+     *
+     * @param A An integers array A
+     * @return A Long array B and B[i]= A[0] * ... * A[i-1] * A[i+1] * ... * A[n-1]
      */
     public List<Long> productExcludeItself(List<Integer> A){
         List<Long> list = new ArrayList<>();

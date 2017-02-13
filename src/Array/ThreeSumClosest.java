@@ -6,11 +6,12 @@ import java.util.Arrays;
  * Created by Lin on 2017/2/12.
  */
 public class ThreeSumClosest {
-    // https://leetcode.com/problems/3sum-closest/
     /**
-     * @param nums: Give an array numbers of n integer
-     * @param target : An integer
-     * @return : return the sum of the three integers, the sum closest target.
+     * @see <a href="https://leetcode.com/problems/3sum-closest/">LeetCode</a>
+     *
+     * @param nums An array numbers of n integer
+     * @param target An integer
+     * @return The sum of the three integers, the sum closest target
      */
     public int threeSumClosest(int[] nums, int target){
         // Reference: Three-sum

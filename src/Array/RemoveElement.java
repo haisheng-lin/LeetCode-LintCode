@@ -4,11 +4,12 @@ package Array;
  * Created by Lin on 2017/2/12.
  */
 public class RemoveElement {
-    // https://leetcode.com/problems/remove-element/
     /**
-     * @param nums: list of integers
-     * @param target: an integer
-     * @return: new length after remove
+     * @see <a href="https://leetcode.com/problems/remove-element/">LeetCode</a>
+     *
+     * @param nums List of integers
+     * @param target An integer
+     * @return New length after remove
      */
     public int removeElement(int[] nums, int target){
         // corner case

@@ -4,10 +4,11 @@ package Array;
  * Created by Lin on 2017/2/12.
  */
 public class FirstMissingPositive {
-    // https://leetcode.com/problems/first-missing-positive/
     /**
-     * @param A: an array of integers
-     * @return: an Integer
+     * @see <a href="https://leetcode.com/problems/first-missing-positive/">LeetCode</a>
+     *
+     * @param A An array of integers
+     * @return An Integer
      */
     public int firstMissingPositive(int[] A){
         for(int i = 0; i < A.length;){

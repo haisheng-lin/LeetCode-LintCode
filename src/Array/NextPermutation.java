@@ -4,10 +4,11 @@ package Array;
  * Created by Lin on 2017/2/12.
  */
 public class NextPermutation {
-    // https://leetcode.com/problems/next-permutation/
     /**
-     * @param nums: an Integer array
-     * @return: void, find next permutation
+     * @see <a href="https://leetcode.com/problems/next-permutation/">LeetCode</a>
+     *
+     * @param nums An Integer array
+     * @return void
      */
     public void nextPermutation(int[] nums) {
         // search first descending order from end
