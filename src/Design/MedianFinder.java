@@ -7,9 +7,14 @@ import java.util.PriorityQueue;
  * Created by Lin on 2017/2/12.
  */
 public class MedianFinder {
-    // https://leetcode.com/problems/find-median-from-data-stream/
+    /**
+     * @see <a href="https://leetcode.com/problems/find-median-from-data-stream/">LeetCode</a>
+     * @see <a href="https://discuss.leetcode.com/topic/6613/java-hashtable-double-linked-list-with-a-touch-of-pseudo-nodes">LeetCode</a>
+     */
+
     // long : prevent data overflow
     Queue<Long> small, large;
+    
     // Constructor
     public MedianFinder(){
         small = new PriorityQueue<>();
