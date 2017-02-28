@@ -14,7 +14,7 @@ public class MedianFinder {
 
     // long : prevent data overflow
     Queue<Long> small, large;
-    
+
     // Constructor
     public MedianFinder(){
         small = new PriorityQueue<>();

@@ -33,7 +33,6 @@ public class LRUCache {
         head.post = node;
     }
 
-    //
     /**
      * remove node out of the linked list
      */
