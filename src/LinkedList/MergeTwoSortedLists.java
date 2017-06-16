@@ -9,7 +9,7 @@ public class MergeTwoSortedLists {
     /**
      * Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
      *
-     * @see <a href="https://leetcode.com/problems/merge-two-sorted-lists/#/description">LintCode</a>
+     * @see <a href="https://leetcode.com/problems/merge-two-sorted-lists/#/description">LeetCode</a>
      *
      * @param l1 The first linked list.
      * @param l2 The second linked list.

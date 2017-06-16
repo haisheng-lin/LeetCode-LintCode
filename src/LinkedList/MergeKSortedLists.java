@@ -12,7 +12,7 @@ public class MergeKSortedLists {
     /**
      * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
      *
-     * @see <a href="https://leetcode.com/problems/merge-k-sorted-lists/#/description">LintCode</a>
+     * @see <a href="https://leetcode.com/problems/merge-k-sorted-lists/#/description">LeetCode</a>
      *
      * @param lists Array of linked lists
      * @return New sorted lists
