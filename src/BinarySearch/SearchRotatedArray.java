@@ -5,43 +5,59 @@ package BinarySearch;
  */
 public class SearchRotatedArray {
     /**
+     * Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+     * You are given a target value to search. If found in the array return its index, otherwise return -1.
+     *
      * @see <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">LeetCode</a>
      *
-     * @param A An integer rotated sorted array
+     * @param nums An integer rotated sorted array
      * @param target An integer to be searched
-     * @return An integer
+     * @return target index or -1
      */
-    public int search(int[] A, int target){
+    public int search(int[] nums, int target) {
         // corner case
-        if(A == null || A.length == 0) return -1;
+        if(nums == null || nums.length == 0) return -1;
+        int min = findMin(nums);
 
-        int start = 0, end = A.length - 1;
-        int rotate = findMin(A);
-        if(A[start] > target && rotate > 0) start = rotate;
-        else if(A[end] < target && rotate > 0) end = rotate - 1;
-
-        return binarySearch(A, target, start, end);
+        if(target < nums[min]) return -1;
+        if(target > nums[nums.length - 1]) return binarySearch(nums, target, 0, min - 1);
+        else return binarySearch(nums, target, min, nums.length - 1);
     }
 
-    private int findMin(int[] A){
-        int start = 0, end = A.length - 1;
-        while(start < end){
-            int mid = start + (end - start) / 2;
-            if(A[start] > A[mid]) end = mid;
-            else if(A[mid] > A[end]) start = mid + 1;
-        }
-
-        return start;
-    }
-
-    private int binarySearch(int[] A, int target, int start, int end){
+    private int binarySearch(int[] nums, int target, int start, int end){
         while(start <= end){
-            int mid = (start + end) / 2;
-            if(A[mid] == target) return mid;
-            else if(A[mid] < target) start = mid + 1;
-            else end = mid - 1;
+            // prevent overflow
+            int mid = start + (end - start) / 2;
+
+            // mid smaller than target
+            if(nums[mid] < target) start = mid + 1;
+
+            // mid larger than target
+            else if(nums[mid] > target) end = mid - 1;
+
+            // mid equals to target
+            else return mid;
         }
 
         return -1;
+    }
+
+    private int findMin(int[] nums){
+        int start = 0, end = nums.length - 1;
+        while(start < end){
+            // min in the first index
+            if(nums[start] < nums[end]) return start;
+
+            // prevent overflow
+            int mid = start + (end - start) / 2;
+
+            // min in left half
+            if(nums[start] > nums[mid]) end = mid;
+
+            // min in right half
+            else start = mid + 1;
+        }
+
+        return start;
     }
 }

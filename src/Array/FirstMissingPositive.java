@@ -7,16 +7,20 @@ public class FirstMissingPositive {
     /**
      * @see <a href="https://leetcode.com/problems/first-missing-positive/">LeetCode</a>
      *
-     * @param A An array of integers
+     * @param nums An array of integers
      * @return An Integer
      */
-    public int firstMissingPositive(int[] A){
-        for(int i = 0; i < A.length;){
-            if(A[i] != i + 1 && A[A[i] - 1] != A[i]) swap(A, i, A[i] - 1);
+    public int firstMissingPositive(int[] nums){
+
+        // step 1: 把尽量多的元素放到合适的位置上
+        for(int i = 0; i < nums.length;){
+            if(nums[i] != i + 1 && nums[nums[i] - 1] != nums[i]) swap(nums, i, nums[i] - 1);
             else i++;
         }
+
+        // step 2: 遍历数组，找出第一个不符的位置
         int index = 0;
-        while(index < A.length && A[index] == index + 1) index++;
+        while(index < nums.length && nums[index] == index + 1) index++;
 
         return index + 1;
     }
