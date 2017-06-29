@@ -13,7 +13,7 @@ public class GroupAnagrams {
     /**
      * This method is used to group anagrams together from a given array of strings.
      *
-     * @see <a href="https://leetcode.com/problems/anagrams/">LintCode</a>
+     * @see <a href="https://leetcode.com/problems/group-anagrams/#/description">LeetCode</a>
      *
      * @param strs An array of String
      * @return List of grouped anagrams
@@ -26,13 +26,14 @@ public class GroupAnagrams {
             char[] charArray = str.toCharArray();
             Arrays.sort(charArray);
             String model = new String(charArray);
+
             List<String> list = new ArrayList<>();
             if(map.containsKey(model)) list = map.get(model);
             list.add(str);
             map.put(model, list);
         }
 
-        for(String model : map.keySet()){
+        for(String model: map.keySet()){
             res.add(map.get(model));
         }
 

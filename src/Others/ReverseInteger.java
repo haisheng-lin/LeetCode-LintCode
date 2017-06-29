@@ -5,6 +5,8 @@ package Others;
  */
 public class ReverseInteger {
     /**
+     * Reverse digits of an integer.
+     *
      * @see <a href="https://leetcode.com/problems/reverse-integer/#/description">LeetCode</a>
      *
      * @param x An integer

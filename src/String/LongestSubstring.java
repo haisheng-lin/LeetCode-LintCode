@@ -8,6 +8,8 @@ import java.util.HashMap;
  */
 public class LongestSubstring {
     /**
+     * Given a string, find the length of the longest substring without repeating characters.
+     *
      * @see <a href="http://www.lintcode.com/en/problem/longest-substring-without-repeating-characters/">LintCode</a>
      *
      * @param s A String

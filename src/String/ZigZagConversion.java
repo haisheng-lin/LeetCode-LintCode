@@ -5,8 +5,9 @@ package String;
  */
 public class ZigZagConversion {
     /**
-     * @see <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/#/description">LeetCode</a>
      * Write the code that will take a string and make this conversion given a number of rows
+     *
+     * @see <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/#/description">LeetCode</a>
      *
      * @param s A given string
      * @param numRows A given integer

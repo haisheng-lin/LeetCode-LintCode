@@ -53,10 +53,12 @@ public class RemoveElement {
      */
     public int removeElement2(int[] nums, int val) {
         int length = 0;
+
         // step 1: count length
         for(int i = 0; i < nums.length; i++){
             if(nums[i] != val) length++;
         }
+
         // step 2: remove val
         int start = length;
         for(int i = 0; i < length; i++){

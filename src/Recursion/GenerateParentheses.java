@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class GenerateParentheses {
 
-    final char leftChar = '(', rightChar = ')';
+final char leftChar = '(', rightChar = ')';
 
     /**
      * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
@@ -26,7 +26,7 @@ public class GenerateParentheses {
     }
 
     private void dfs(List<String> res, int left, int right, StringBuilder sb){
-        // terminate case
+
         if(left == 0 && right == 0){
             res.add(sb.toString());
             return;

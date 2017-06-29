@@ -20,6 +20,7 @@ public class AddNumbers {
         ListNode dummy = new ListNode(-1);
         ListNode p = dummy, p1 = l1, p2 = l2;
         boolean add = false;
+
         while(p1 != null || p2 != null){
             int val = 0;
             if(p1 != null && p2 != null){

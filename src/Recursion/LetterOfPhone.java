@@ -14,7 +14,7 @@ public class LetterOfPhone {
     /**
      * Given a digit string, this method is to find all possible letter combinations that the number could represent.
      *
-     * @see <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/">LeetCode</a>
+     * @see <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/#/description">LeetCode</a>
      *
      * @param digits A String representing a number
      * @return All possible combinations

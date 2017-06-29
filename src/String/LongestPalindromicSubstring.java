@@ -5,6 +5,8 @@ package String;
  */
 public class LongestPalindromicSubstring {
     /**
+     * Given a string s, find the longest palindromic substring in s.
+     *
      * @see <a href="https://leetcode.com/problems/longest-palindromic-substring/">LeetCode</a>
      *
      * @param s A String

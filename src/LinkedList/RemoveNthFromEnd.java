@@ -16,17 +16,19 @@ public class RemoveNthFromEnd {
      * @return New head of linked list.
      */
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        // dummy node is necessary
+
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        // 1. count size
+
+        // Step 1: count size
         ListNode p = head;
         int size = 0;
         while(p != null){
             size++;
             p = p.next;
         }
-        // 2. find the nth node from the end and remove it
+
+        // Step 2: find the nth node from the end and remove it
         p = dummy;
         for(int i = 0; i < size - n; i++) p = p.next;
         p.next = p.next.next;

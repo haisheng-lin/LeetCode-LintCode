@@ -17,10 +17,13 @@ public class MergeInterval {
      * @return A new sorted interval list
      */
     public List<Interval> merge(List<Interval> intervals){
-        // corner case
+
+        // 边界处理
         if(intervals == null || intervals.isEmpty()) return new ArrayList<>();
-        // create empty list as result
+
         List<Interval> res = new ArrayList<>();
+
+        // Step 1: 对列表按start和end从低到高排序
         Collections.sort(intervals, new Comparator<Interval>(){
             @Override
             public int compare(Interval i1, Interval i2){
@@ -28,21 +31,22 @@ public class MergeInterval {
                 return i1.end - i2.end;
             }
         });
-        // merge intervals
+
+        // Step 2: 合并intervals
         int start = intervals.get(0).start, end = intervals.get(0).end;
         for(Interval interval : intervals){
-            // non-overlapping
+            // 没有重叠的情况
             if(interval.start > end){
                 res.add(new Interval(start, end));
-                // reset
                 start = interval.start;
                 end = interval.end;
             }
-            // overlapping
+            // 重叠的情况
             else end = Math.max(end, interval.end);
         }
+
         res.add(new Interval(start, end));
-        // return result
+
         return res;
     }
 }

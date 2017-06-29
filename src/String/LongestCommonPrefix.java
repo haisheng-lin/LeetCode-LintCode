@@ -5,6 +5,8 @@ package String;
  */
 public class LongestCommonPrefix {
     /**
+     * Write a function to find the longest common prefix string amongst an array of strings.
+     *
      * @see <a href="https://leetcode.com/problems/longest-common-prefix/">LeetCode</a>
      *
      * @param strs An array of String

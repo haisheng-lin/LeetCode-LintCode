@@ -18,31 +18,35 @@ public class InsertInterval {
      * @return void
      */
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
-        // create empty list as result
+
         List<Interval> res = new ArrayList<>();
-        // index for insertion
+
+        // 插入的位置
         int insertPos = 0;
-        // new Interval to be inserted or merged
+
+        // 新的Interval的start以及end
         int start = newInterval.start, end = newInterval.end;
-        // loop for each interval
-        for(int i = 0; i < intervals.size(); i++){
-            // non-overlapping
-            if(intervals.get(i).start > end){
-                res.add(intervals.get(i));
-            }
-            else if(intervals.get(i).end < start){
-                res.add(intervals.get(i));
+
+        for(Interval interval: intervals){
+            // case 1
+            if(interval.end < start){
+                res.add(interval);
                 insertPos++;
             }
-            // overlapping
+            // case 2
+            else if(interval.start > end){
+                res.add(interval);
+            }
+            // case 3
             else{
-                start = Math.min(start, intervals.get(i).start);
-                end = Math.max(end, intervals.get(i).end);
+                start = Math.min(start, interval.start);
+                end = Math.max(end, interval.end);
             }
         }
-        // insert new Interval
+
+        // 插入新的Interval
         res.add(insertPos, new Interval(start, end));
-        // return result
+
         return res;
     }
 }
