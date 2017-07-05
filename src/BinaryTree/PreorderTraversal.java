@@ -41,12 +41,15 @@ public class PreorderTraversal {
      * @return Preorder in ArrayList which contains node values.
      */
     public List<Integer> preorderTraversal2(TreeNode root){
-        // create empty list as result
+
         List<Integer> res = new ArrayList<>();
+
         // stack is similar to memory stack in recursion
         Stack<TreeNode> stack = new Stack<>();
+
         // have a check here to handle corner case
         if(root != null) stack.push(root);
+
         while(!stack.isEmpty()){
             TreeNode p = stack.pop();
             res.add(p.val);
@@ -54,7 +57,7 @@ public class PreorderTraversal {
             if(p.right != null) stack.push(p.right);
             if(p.left != null) stack.push(p.left);
         }
-        // return result
+
         return res;
     }
 }

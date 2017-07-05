@@ -7,17 +7,19 @@ public class MergeSortedArray {
     /**
      * @see <a href="https://leetcode.com/problems/merge-sorted-array//">LeetCode</a>
      *
-     * @param A Sorted integer array A which has m elements,
+     * @param nums1 Sorted integer array A which has m elements,
      *           but size of A is m+n
-     * @param B Sorted integer array B which has n elements
+     * @param nums2 Sorted integer array B which has n elements
      * @return void
      */
-    public void mergeSortedArray1(int[] A, int m, int[] B, int n) {
-        int index = m + n - 1;
-        int ap = m - 1, bp = n - 1;
-        while(ap >= 0 || bp >= 0){
-            if(bp < 0 || (ap >= 0 && A[ap] >= B[bp])) A[index--] = A[ap--];
-            else A[index--] = B[bp--];
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+
+        int index = nums1.length - 1;
+        int p1 = m - 1, p2 = n - 1;
+
+        while(p1 >= 0 || p2 >= 0){
+            if(p2 < 0 || (p1 >= 0 && nums1[p1] >= nums2[p2])) nums1[index--] = nums1[p1--];
+            else nums1[index--] = nums2[p2--];
         }
     }
 

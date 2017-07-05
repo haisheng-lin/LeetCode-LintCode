@@ -16,8 +16,10 @@ public class PartitionList {
      * @return New head of the list
      */
     public ListNode partition(ListNode head, int x) {
+
         ListNode large = new ListNode(-1), small = new ListNode(-1);
         ListNode p = head, lp = large, sp = small;
+
         while(p != null){
             if(p.val < x){
                 sp.next = p;
@@ -29,6 +31,8 @@ public class PartitionList {
             }
             p = p.next;
         }
+
+        lp.next = null;
         sp.next = large.next;
 
         return small.next;

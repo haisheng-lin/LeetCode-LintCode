@@ -13,27 +13,19 @@ public class EditDistance {
      * @return The minimum number of steps changing from word1 to word2.
      */
     public int minDistance(String word1, String word2) {
-        // special case
-        if(word1.equals(word2)) return 0;
 
-        int m = word1.length(), n = word2.length();
-        int[][] dp = new int[m + 1][n + 1];
+        int[][] dp = new int[word1.length() + 1][word2.length() + 1];
 
-        for(int i = 0; i <= m; i++){
-            dp[i][0] = i;
-        }
-        for(int i = 0; i <= n; i++){
-            dp[0][i] = i;
-        }
+        for(int r = 0; r <= word1.length(); r++) dp[r][0] = r;
+        for(int c = 0; c <= word2.length(); c++) dp[0][c] = c;
 
-        for(int row = 1; row <= m; row++){
-            for(int col = 1; col <= n; col++){
-                char c1 = word1.charAt(row - 1), c2 = word2.charAt(col - 1);
-                if(c1 == c2) dp[row][col] = dp[row - 1][col - 1];
-                else dp[row][col] = Math.min(Math.min(dp[row - 1][col], dp[row][col - 1]), dp[row - 1][col - 1]) + 1;
+        for(int r = 1; r <= word1.length(); r++){
+            for(int c = 1; c <= word2.length(); c++){
+                if(word1.charAt(r - 1) == word2.charAt(c - 1)) dp[r][c] = dp[r - 1][c - 1];
+                else dp[r][c] = Math.min(Math.min(dp[r - 1][c], dp[r][c - 1]), dp[r - 1][c - 1]) + 1;
             }
         }
 
-        return dp[m][n];
+        return dp[word1.length()][word2.length()];
     }
 }

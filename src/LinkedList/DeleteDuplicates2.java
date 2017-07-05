@@ -18,30 +18,35 @@ public class DeleteDuplicates2 {
         // corner case
         if(head == null || head.next == null) return head;
 
-        ListNode dummy = new ListNode(-1), distinct = dummy;
-        ListNode p = head;
+        ListNode dummy = new ListNode(-1);
+        ListNode distinct = dummy, p = head;
+        boolean duplicate = false;
         int pre = head.val;
-        boolean repeat = false;
+
         while(p.next != null){
-            if(p.next.val == pre){
-                repeat = true;
-                distinct.next = null;
-            }
+
+            if(p.next.val == pre) duplicate = true;
             else{
-                if(!repeat){
+                // case 1
+                if(!duplicate){
                     distinct.next = p;
                     distinct = distinct.next;
                 }
+
+                // case 2
                 if(p.next.next == null){
                     distinct.next = p.next;
                     distinct = distinct.next;
                 }
-                // reset
-                repeat = false;
+
+                duplicate = false;
                 pre = p.next.val;
             }
+
             p = p.next;
         }
+
+        distinct.next = null;
 
         return dummy.next;
     }

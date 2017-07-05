@@ -42,22 +42,23 @@ public class ReverseList {
      * @return New head of list
      */
     public ListNode reverseBetween(ListNode head, int m, int n) {
-        // create dummy node
+
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        // find the last node on LHS, the first node on RHS of the reverse part
-        ListNode left = dummy, right = dummy;
-        for(int i = 1; i < m; i++) left = left.next;
-        for(int i = 1; i <= n + 1; i++) right = right.next;
-        // reverse
-        ListNode pre = left.next, cur = pre.next;
-        while(cur != right){
+
+        // Step 1: 找到需要reverse的链表的前一个节点
+        ListNode p = dummy;
+        for(int i = 0; i < m - 1; i++) p = p.next;
+
+        // Step 2: reverse操作
+        ListNode pre = p.next, cur = pre.next;
+        for(int i = 0; i < n - m; i++){
             pre.next = cur.next;
-            cur.next = left.next;
-            left.next = cur;
+            cur.next = p.next;
+            p.next = cur;
             cur = pre.next;
         }
-        // return result
+
         return dummy.next;
     }
 }

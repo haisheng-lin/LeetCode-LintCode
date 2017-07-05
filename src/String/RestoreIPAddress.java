@@ -22,8 +22,9 @@ public class RestoreIPAddress {
     public List<String> restoreIPAddress(String s){
         // corner case
         if(s == null || s.length() < 4 || s.length() > 12) return new ArrayList<>();
-        // create empty list as result
+
         List<String> res = new ArrayList<>();
+
         for(int i = 0; i < s.length() - 3; i++){
             if(!isValidNum(s, 0, i)) continue;
             for(int j = i + 1; j < s.length() - 2; j++){
@@ -45,7 +46,7 @@ public class RestoreIPAddress {
                 }
             }
         }
-        // return result
+
         return res;
     }
 

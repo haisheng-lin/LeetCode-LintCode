@@ -16,12 +16,12 @@ public class Combinations {
      */
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new ArrayList<>();
-        dfs(res, new ArrayList<Integer>(), 1, n, k);
+        dfs(res, new ArrayList<>(), 1, n, k);
+
         return res;
     }
 
     private void dfs(List<List<Integer>> res, List<Integer> list, int depth,int n, int k){
-        // corner case
         if(k == 0){
             res.add(new ArrayList<>(list));
             return;

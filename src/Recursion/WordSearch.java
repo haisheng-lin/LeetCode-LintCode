@@ -26,16 +26,21 @@ public class WordSearch {
     private boolean dfs(char[][] board, String word, int row, int col, int depth){
         // true case
         if(depth == word.length()) return true;
+
         // check boundary
         if(row < 0 || row >= board.length || col < 0 || col >= board[row].length) return false;
+
         if(word.charAt(depth) != board[row][col]) return false;
-        // invalid
+
+        // invalidate
         board[row][col] ^= 256;
+
         boolean flag = dfs(board, word, row - 1, col, depth + 1) ||
                 dfs(board, word, row + 1, col, depth + 1) ||
                 dfs(board, word, row, col - 1, depth + 1) ||
                 dfs(board, word, row, col + 1, depth + 1);
-        // valid
+
+        // revalidate
         board[row][col] ^= 256;
 
         return flag;

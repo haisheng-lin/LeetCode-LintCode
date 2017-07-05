@@ -22,27 +22,27 @@ public class SpiralMatrix {
         List<Integer> res = new ArrayList<>();
 
         // 初始化行与列的上限以及下限
-        int lr = 0, ur = matrix.length - 1, lc = 0, uc = matrix[0].length - 1;
+        int lr = 0, hr = matrix.length - 1, lc = 0, hc = matrix[0].length - 1;
 
-        while(lr <= ur && lc <= uc){
+        while(lr <= hr && lc <= hc){
             // 向右遍历
-            if(lr <= ur){
-                for(int c = lc; c <= uc; c++) res.add(matrix[lr][c]);
+            if(lr <= hr){
+                for(int c = lc; c <= hc; c++) res.add(matrix[lr][c]);
                 lr++;
             }
             // 向下遍历
-            if(lc <= uc){
-                for(int r = lr; r <= ur; r++) res.add(matrix[r][uc]);
-                uc--;
+            if(lc <= hc){
+                for(int r = lr; r <= hr; r++) res.add(matrix[r][hc]);
+                hc--;
             }
             // 向左遍历
-            if(lr <= ur){
-                for(int c = uc; c >= lc; c--) res.add(matrix[ur][c]);
-                ur--;
+            if(lr <= hr){
+                for(int c = hc; c >= lc; c--) res.add(matrix[hr][c]);
+                hr--;
             }
             // 向上遍历
-            if(lc <= uc){
-                for(int r = ur; r >= lr; r--) res.add(matrix[r][lc]);
+            if(lc <= hc){
+                for(int r = hr; r >= lr; r--) res.add(matrix[r][lc]);
                 lc++;
             }
         }
