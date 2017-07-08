@@ -21,9 +21,9 @@ public class SymmetricTree {
         return helper(root.left, root.right);
     }
 
-    private boolean helper(TreeNode left, TreeNode right){
-        if(left == null || right == null) return left == right;
-        return (left.val == right.val && helper(left.left, right.right) && helper(left.right, right.left));
+    private boolean helper(TreeNode lChild, TreeNode rChild){
+        if(lChild == null || rChild == null) return lChild == rChild;
+        return (lChild.val == rChild.val && helper(lChild.left, rChild.right) && helper(lChild.right, rChild.left));
     }
 
     /***************************************** Iterative Version *****************************************/
@@ -35,26 +35,31 @@ public class SymmetricTree {
      * @return True if tree is symmetric, else false
      */
     public boolean isSymmetric2(TreeNode root) {
+
         // corner case
         if(root == null) return true;
-        // create stacks for left subtree and right subtree
+
         Stack<TreeNode> lStack = new Stack<>(), rStack = new Stack<>();
         lStack.push(root.left);
         rStack.push(root.right);
+
         while(!lStack.isEmpty() || !rStack.isEmpty()){
             TreeNode lChild = lStack.pop(), rChild = rStack.pop();
+
             // check current node
             if((lChild == null || rChild == null) && lChild != rChild) return false;
             if(lChild == null && rChild == null) continue;
             if(lChild.val != rChild.val) return false;
+
             // push left.left and right.right
             lStack.push(lChild.left);
             rStack.push(rChild.right);
+
             // push left.right and right.left
             lStack.push(lChild.right);
             rStack.push(rChild.left);
         }
-        // return true if passing the loop
+
         return true;
     }
 }

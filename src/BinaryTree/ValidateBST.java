@@ -13,15 +13,16 @@ public class ValidateBST {
      * @return True if the binary tree is BST, or false
      */
     public boolean isValidBST(TreeNode root) {
-        long upBound = (long) Integer.MAX_VALUE + 1;
-        long lowBound = (long) Integer.MIN_VALUE - 1;
+        long min = (long)Integer.MIN_VALUE - 1;
+        long max = (long)Integer.MAX_VALUE + 1;
 
-        return helper(root, lowBound, upBound);
+        return helper(root, min, max);
     }
 
-    private boolean helper(TreeNode root, long lowBound, long upBound){
+    private boolean helper(TreeNode root, long min, long max){
         if(root == null) return true;
-        if(lowBound >= root.val || root.val >= upBound) return false;
-        return helper(root.left, lowBound, root.val) && helper(root.right, root.val, upBound);
+        if(root.val <= min || root.val >= max) return false;
+
+        return helper(root.left, min, root.val) && helper(root.right, root.val, max);
     }
 }

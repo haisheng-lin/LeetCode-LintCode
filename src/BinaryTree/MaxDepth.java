@@ -13,7 +13,11 @@ public class MaxDepth {
      * @return An integer.
      */
     public int maxDepth(TreeNode root) {
+
+        // 1. 终止条件
         if(root == null) return 0;
+
+        // 2. 母函数与子函数的关系
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 }

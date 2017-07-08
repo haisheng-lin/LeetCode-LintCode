@@ -39,32 +39,21 @@ public class PathSum2 {
      * @return List of path in the tree which sums to target
      */
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
-        // create a list to store paths as result
         List<List<Integer>> res = new ArrayList<>();
-        // create a list to store current path, LinkedList is faster than ArrayList in respect of deletion
-        if(root != null) helper(res, new LinkedList<>(), root, sum);
-        // return result
+        if(root != null) helper(res, new ArrayList<>(), root, sum);
+
         return res;
     }
 
-    private void helper(List<List<Integer>> res, List<Integer> list, TreeNode root, int sum){
-        // current node is a leaf, then should return
-        if(root.left == null && root.right == null){
-            if(root.val == sum){
-                list.add(root.val);
-                // usually return ArrayList
-                res.add(new ArrayList<>(list));
-                list.remove(list.size() - 1);
-            }
-            return;
-        }
+    private void helper(List<List<Integer>> res, List<Integer> path, TreeNode root, int sum){
 
-        list.add(root.val);
+        path.add(root.val);
 
-        // invoke next recursion
-        if(root.left != null) helper(res, list, root.left, sum - root.val);
-        if(root.right != null) helper(res, list, root.right, sum - root.val);
+        if(root.left == null && root.right == null && root.val == sum) res.add(new ArrayList<>(path));
 
-        list.remove(list.size() - 1);
+        if(root.left != null) helper(res, path, root.left, sum - root.val);
+        if(root.right != null) helper(res, path, root.right, sum - root.val);
+
+        path.remove(path.size() - 1);
     }
 }

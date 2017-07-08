@@ -18,13 +18,13 @@ public class BalancedTree {
     public boolean isBalanced(TreeNode root) {
         if(root == null) return true;
         int left = countDepth(root.left), right = countDepth(root.right);
-        return (isBalanced(root.left) && isBalanced(root.right) && Math.abs(right - left) <= 1);
+
+        // 注：判断深度差必须放最前面，否则可能StackOverflowError
+        return Math.abs(left - right) <= 1 && isBalanced(root.left) && isBalanced(root.right);
     }
 
     private int countDepth(TreeNode root){
-        // corner case
         if(root == null) return 0;
-        // next recursion
         return Math.max(countDepth(root.left), countDepth(root.right)) + 1;
     }
 }

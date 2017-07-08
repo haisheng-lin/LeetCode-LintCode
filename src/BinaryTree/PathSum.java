@@ -62,26 +62,23 @@ public class PathSum {
         // corner case
         if(root == null) return false;
 
-        // create a list to store nodes in pre level, and initialize
         List<TreeNode> preLevelNodes = Arrays.asList(root);
-        // create a list to store current sums in pre level, and initialize
         List<Integer> preLevelSums = Arrays.asList(root.val);
 
         // loop until there is no node in the level
         while(!preLevelNodes.isEmpty()){
-            // create a list to store nodes in next level
             List<TreeNode> nextLevelNodes = new ArrayList<>();
-            // create a list to store current sum in next level
             List<Integer> nextLevelSums = new ArrayList<>();
 
-            // loop each node in pre level
             for(int i = 0; i < preLevelNodes.size(); i++){
                 TreeNode node = preLevelNodes.get(i);
+
                 // if the current node is a leaf (no child)
                 if(node.left == null && node.right == null){
                     // if the path sum equals to target, return true
                     if(preLevelSums.get(i) == sum) return true;
                 }
+
                 // store current sum in next level
                 if(node.left != null){
                     nextLevelNodes.add(node.left);
@@ -93,7 +90,6 @@ public class PathSum {
                 }
             }
 
-            // replace pre level list by next level list
             preLevelNodes = nextLevelNodes;
             preLevelSums = nextLevelSums;
         }

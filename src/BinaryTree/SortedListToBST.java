@@ -1,4 +1,4 @@
-package LinkedList;
+package BinaryTree;
 
 import ClassPackage.ListNode;
 import ClassPackage.TreeNode;
@@ -18,7 +18,8 @@ public class SortedListToBST {
     ListNode node;
     public TreeNode sortedListToBST(ListNode head) {
         node = head;
-        // count size
+
+        // 获取链表长度
         int size = 0;
         ListNode p = head;
         while(p != null){
@@ -30,10 +31,12 @@ public class SortedListToBST {
     }
 
     private TreeNode helper(int start, int end){
-        // corner case
+        // 1. 终止条件
         if(start > end) return null;
 
         int mid = (start + end) / 2;
+
+        // 2. 母函数与子函数的关系
         TreeNode left = helper(start, mid - 1);
         TreeNode root = new TreeNode(node.val);
         root.left = left;

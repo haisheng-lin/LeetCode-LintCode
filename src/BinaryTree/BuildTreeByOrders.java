@@ -40,20 +40,23 @@ public class BuildTreeByOrders {
     }
 
     private TreeNode helper(int[] preorder, int pStart, int pEnd, int[] inorder, int iStart, int iEnd){
-        // corner case
+        // 1. 终止条件
         if(pStart > pEnd) return null;
-        // root of the tree (subtree)
+
+        // 构造当前子树的根节点
         TreeNode root = new TreeNode(preorder[pStart]);
-        // search the root in inorder array
+
+        // 在中序排列里寻找根节点的index
         int index = 0;
         while(index < inorder.length){
             if(root.val == inorder[index]) break;
             index++;
         }
-        // do next recursion
+
+        // 2. 母函数与子函数的关系
         root.left = helper(preorder, pStart + 1, pStart + (index - iStart), inorder, iStart, index - 1);
         root.right = helper(preorder, pStart + (index - iStart) + 1, pEnd, inorder, index + 1, iEnd);
-        // return result
+
         return root;
     }
 
@@ -69,20 +72,23 @@ public class BuildTreeByOrders {
     }
 
     private TreeNode helper2(int[] inorder, int iStart, int iEnd, int[] postorder, int pStart, int pEnd){
-        // corner case
+        // 1. 终止条件
         if(pStart > pEnd) return null;
-        // root of the current tree (subtree)
+
+        // 构造当前子树的根节点
         TreeNode root = new TreeNode(postorder[pEnd]);
-        // search the root in inorder array
+
+        // 在中序排列里寻找根节点的index
         int index = 0;
         while(index < inorder.length){
             if(root.val == inorder[index]) break;
             index++;
         }
-        // do next recursion
+
+        // 2. 母函数与子函数的关系
         root.left = helper2(inorder, iStart, index - 1, postorder, pStart, pStart + (index - iStart) - 1);
         root.right = helper2(inorder, index + 1, iEnd, postorder, pStart + (index - iStart), pEnd - 1);
-        // return result
+
         return root;
     }
 }

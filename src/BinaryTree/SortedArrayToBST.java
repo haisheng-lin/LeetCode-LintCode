@@ -38,20 +38,18 @@ public class SortedArrayToBST {
     }
 
     private TreeNode helper(int[] nums, int start, int end){
-        // terminate case
+        // 1. 终止条件
         if(start > end) return null;
 
-        // mid = (start + end) / 2, but it might cause overflow
+        // mid = (start + end) / 2, 这样为了防止溢出
         int mid = start + (end - start) / 2;
-        // build the root
+
         TreeNode root = new TreeNode(nums[mid]);
 
-        // construct left subtree
+        // 2. 母函数与子函数的关系
         root.left = helper(nums, start, mid - 1);
-        // construct right subtree
         root.right = helper(nums, mid + 1, end);
 
-        // return root
         return root;
     }
 }
