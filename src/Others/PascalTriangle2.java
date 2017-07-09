@@ -16,10 +16,12 @@ public class PascalTriangle2 {
      * @return A list, the kth row of the Pascal's triangle.
      */
     public List<Integer> getRow(int rowIndex) {
-        // create an empty list as result
+
         List<Integer> res = new ArrayList<>();
+
         // initialization
         res.add(1);
+
         for(int row = 1; row <= rowIndex; row++){
             // 这里i = [1, row - 1]是不对的,因为后面的值受到之前的影响
             for(int i = row - 1; i >= 1; i--){
@@ -29,7 +31,7 @@ public class PascalTriangle2 {
             }
             res.add(1);
         }
-        // return result
+
         return res;
     }
 }

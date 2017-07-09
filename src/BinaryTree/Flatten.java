@@ -15,14 +15,13 @@ public class Flatten {
      * @return Root of flattened tree
      */
     public void flatten(TreeNode root){
-        // corner case
+        // 1. 终止条件
         if(root == null) return;
 
-        // do next recursion
+        // 2. 母函数与子函数的关系
         flatten(root.left);
         flatten(root.right);
 
-        // flatten
         TreeNode left = root.left;
         root.left = null;
 

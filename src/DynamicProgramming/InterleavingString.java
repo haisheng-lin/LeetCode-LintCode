@@ -19,6 +19,8 @@ public class InterleavingString {
         if(s1.length() + s2.length() != s3.length()) return false;
 
         boolean[][] dp = new boolean[s1.length() + 1][s2.length() + 1];
+
+        // 预处理
         dp[0][0] = true;
 
         for(int r = 0; r < s1.length(); r++){
@@ -31,6 +33,7 @@ public class InterleavingString {
             else break;
         }
 
+        // 状态转移方程式
         for(int r = 1; r <= s1.length(); r++){
             for(int c = 1; c <= s2.length(); c++){
                 char c1 = s1.charAt(r - 1), c2 = s2.charAt(c - 1), c3 = s3.charAt(r + c - 1);

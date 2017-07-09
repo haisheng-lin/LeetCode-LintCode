@@ -16,9 +16,11 @@ public class EditDistance {
 
         int[][] dp = new int[word1.length() + 1][word2.length() + 1];
 
+        // 预处理
         for(int r = 0; r <= word1.length(); r++) dp[r][0] = r;
         for(int c = 0; c <= word2.length(); c++) dp[0][c] = c;
 
+        // 状态转移方程式
         for(int r = 1; r <= word1.length(); r++){
             for(int c = 1; c <= word2.length(); c++){
                 if(word1.charAt(r - 1) == word2.charAt(c - 1)) dp[r][c] = dp[r - 1][c - 1];
