@@ -17,11 +17,9 @@ public class PalindromePartitioning {
      * @return all possible palindrome partitioning of s
      */
     public List<List<String>> partition(String s) {
-        // create an empty list as result
         List<List<String>> res = new ArrayList<>();
-        // invoke dfs method, LinkedList is more faster to do deletion
         dfs(res, new LinkedList<>(), s, 0);
-        // return result
+
         return res;
     }
 

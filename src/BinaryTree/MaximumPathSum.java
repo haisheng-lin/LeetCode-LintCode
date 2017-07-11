@@ -11,7 +11,7 @@ public class MaximumPathSum {
 
     /**
      * Given a binary tree, find the maximum path sum.
-     * @see <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/?tab=Description">LeetCode</a>
+     * @see <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum">LeetCode</a>
      * @see <a href="https://discuss.leetcode.com/topic/4407/accepted-short-solution-in-java/2">LeetCode</a>
      *
      * @param root The root of binary tree.
@@ -20,6 +20,7 @@ public class MaximumPathSum {
     public int maxPathSum(TreeNode root) {
         max = Integer.MIN_VALUE;
         maxPathDown(root);
+
         return max;
     }
 
