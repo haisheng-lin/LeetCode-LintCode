@@ -11,6 +11,7 @@ public class WordBreak {
      *
      * @param s A string
      * @param dict A dictionary of words dictionary
+     * @return True if the string can be segmented into a space-separated sequence of one or more dictionary words, else false
      */
     public boolean wordBreak(String s, Set<String> dict) {
         // special case

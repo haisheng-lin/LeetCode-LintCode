@@ -5,7 +5,7 @@ import ClassPackage.ListNode;
 /**
  * Created by Lin on 2017/2/12.
  */
-public class HasCycle {
+public class LinkedListCycle {
     /**
      * This method is to determine if it has a cycle in it.
      *
@@ -15,7 +15,9 @@ public class HasCycle {
      * @return True if it has a cycle, or false
      */
     public boolean hasCycle(ListNode head) {
+        // corner case
         if(head == null) return true;
+
         ListNode slow = head, fast = head;
         while(fast.next != null && fast.next.next != null){
             fast = fast.next.next;
