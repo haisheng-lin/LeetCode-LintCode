@@ -51,11 +51,12 @@ public class PreorderTraversal {
         if(root != null) stack.push(root);
 
         while(!stack.isEmpty()){
-            TreeNode p = stack.pop();
-            res.add(p.val);
+            TreeNode node = stack.pop();
+            res.add(node.val);
+
             // since stack has FILO property, so we push right child first
-            if(p.right != null) stack.push(p.right);
-            if(p.left != null) stack.push(p.left);
+            if(node.right != null) stack.push(node.right);
+            if(node.left != null) stack.push(node.left);
         }
 
         return res;

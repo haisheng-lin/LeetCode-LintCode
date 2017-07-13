@@ -10,7 +10,7 @@ import java.util.HashMap;
 public class LRUCache {
 
     /**
-     * @see <a href="https://leetcode.com/problems/climbing-stairs/">LeetCode</a>
+     * @see <a href="https://leetcode.com/problems/lru-cache/#/description">LeetCode</a>
      * @see <a href="https://discuss.leetcode.com/topic/6613/java-hashtable-double-linked-list-with-a-touch-of-pseudo-nodes">LeetCode</a>
      */
 
