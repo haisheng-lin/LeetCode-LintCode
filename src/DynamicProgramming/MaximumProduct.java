@@ -15,11 +15,15 @@ public class MaximumProduct {
         // corner case
         if(nums == null || nums.length == 0) return 0;
 
-        int[] max = new int[nums.length + 1];
-        int[] min = new int[nums.length + 1];
-        max[0] = min[0] = 1;
         int res = Integer.MIN_VALUE;
 
+        int[] max = new int[nums.length + 1];
+        int[] min = new int[nums.length + 1];
+
+        // 预处理
+        max[0] = min[0] = 1;
+
+        // 状态转移方程式
         for(int i = 0; i < nums.length; i++){
             if(nums[i] < 0){
                 max[i + 1] = Math.max(min[i] * nums[i], nums[i]);

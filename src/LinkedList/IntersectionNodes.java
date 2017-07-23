@@ -17,8 +17,10 @@ public class IntersectionNodes {
      * @return Head of intersection of two linked lists
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+
         // get length of two lists
         int lengthA = getLength(headA), lengthB = getLength(headB);
+
         // move headA and headB to the same start point
         while(lengthA > lengthB){
             headA = headA.next;
@@ -28,8 +30,8 @@ public class IntersectionNodes {
             headB = headB.next;
             lengthB--;
         }
+
         // find the intersection till end
-        // here's the tricky case: when headA == null && headB == null, it would break the loop
         while(headA != headB){
             headA = headA.next;
             headB = headB.next;
@@ -44,10 +46,12 @@ public class IntersectionNodes {
     private int getLength(ListNode head){
         int length = 0;
         ListNode p = head;
+
         while(p != null){
             length++;
             p = p.next;
         }
+
         return length;
     }
 }

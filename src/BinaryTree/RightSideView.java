@@ -9,17 +9,16 @@ import java.util.ArrayList;
  */
 public class RightSideView {
     /**
-     * @see <a href="https://leetcode.com/problems/binary-tree-right-side-view/?tab=Description">LeetCode</a>
+     * @see <a href="https://leetcode.com/problems/binary-tree-right-side-view">LeetCode</a>
      *
      * @param root The root of binary tree.
      * @return The values of the nodes you can see ordered from top to bottom, standing on the right side of the tree
      */
     public List<Integer> rightSideView(TreeNode root) {
-        // create an empty list as result
+
         List<Integer> res = new ArrayList<>();
-        // invoke helper method
         helper(res, root, 0);
-        // return result
+
         return res;
     }
 

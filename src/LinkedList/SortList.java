@@ -17,7 +17,8 @@ public class SortList {
     public ListNode sortList(ListNode head) {
         // corner case
         if(head == null || head.next == null) return head;
-        // 1. partition the list
+
+        // Step 1: partition the list
         ListNode slow = head, fast = head;
         while(fast.next != null && fast.next.next != null){
             fast = fast.next.next;
@@ -25,15 +26,18 @@ public class SortList {
         }
         ListNode first = head, second = slow.next;
         slow.next = null;
-        // 2. sort each sub-list
+
+        // Step 2: sort each sub-list
         ListNode l1 = sortList(first), l2 = sortList(second);
-        // 3. merge sub-list
+
+        // Step 3: merge sub-list
         return mergeList(l1, l2);
     }
 
     private ListNode mergeList(ListNode l1, ListNode l2){
         ListNode dummy = new ListNode(-1);
         ListNode p = dummy, p1 = l1, p2 = l2;
+
         while(p1 != null || p2 != null){
             if(p2 == null || (p1 != null && p1.val <= p2.val)){
                 p.next = p1;
@@ -45,6 +49,7 @@ public class SortList {
             }
             p = p.next;
         }
+
         return dummy.next;
     }
 }

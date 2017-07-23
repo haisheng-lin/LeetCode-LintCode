@@ -21,7 +21,7 @@ public class NumberOfIslands {
     public int numIslands(char[][] grid) {
         // count of islands
         int count = 0;
-        // loop the matrix
+
         for(int row = 0; row < grid.length; row++){
             for(int col = 0; col < grid[row].length; col++){
                 if(grid[row][col] == island){
@@ -30,15 +30,18 @@ public class NumberOfIslands {
                 }
             }
         }
-        // return result
+
         return count;
     }
 
     private void resetZero(char[][] grid, int row, int col){
+
         // terminate if the current char is 0
         if(grid[row][col] == water) return;
+
         // set to water
         grid[row][col] = water;
+
         // leftwards
         if(col > 0) resetZero(grid, row, col - 1);
         // rightwards

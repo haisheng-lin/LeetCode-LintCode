@@ -9,23 +9,23 @@ public class RemoveElements {
     /**
      * Remove all elements from a linked list of integers that have value val.
      *
-     * @see <a href="https://leetcode.com/problems/remove-linked-list-elements/?tab=Description">LeetCode</a>
+     * @see <a href="https://leetcode.com/problems/remove-linked-list-elements">LeetCode</a>
      *
      * @param head Head of the sorted linked list
      * @param val Integer
      * @return Head of new linked list
      */
     public ListNode removeElements(ListNode head, int val) {
-        // dummy node
+
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        // pointer of result list and given list
-        ListNode pre = dummy;
-        while(pre != null && pre.next != null){
-            if(pre.next.val == val) pre.next = pre.next.next;
-            else pre = pre.next;
+        ListNode p = dummy;
+
+        while(p.next != null){
+            if(p.next.val == val)p.next = p.next.next;
+            else p = p.next;
         }
-        // return result
+
         return dummy.next;
     }
 }

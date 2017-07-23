@@ -14,8 +14,10 @@ public class HappyNumber {
      * @return True if n is happy number, else false
      */
     public boolean isHappy(int n) {
+
         Set<Integer> set = new HashSet<>();
         int curNum = n;
+
         // break if the set begins looping
         while(set.add(curNum)){
             // true if the num is 1
