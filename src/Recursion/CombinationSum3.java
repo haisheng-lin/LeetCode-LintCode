@@ -18,17 +18,20 @@ public class CombinationSum3 {
      * @return All possible combinations
      */
     public List<List<Integer>> combinationSum3(int k, int n) {
+
         List<List<Integer>> res = new ArrayList<>();
-        dfs(res, new ArrayList<Integer>(), 1, k, n);
+        dfs(res, new ArrayList<>(), k , n, 1);
+
         return res;
     }
 
-    private void dfs(List<List<Integer>> res, List<Integer> list, int depth, int k, int n){
+    private void dfs(List<List<Integer>> res, List<Integer> list, int k, int n, int depth){
+        // corner case
         if(k == 0 && n == 0) res.add(new ArrayList<>(list));
 
-        for(int i = depth; i <= 9 && n >= i; i++){
+        for(int i = depth; i <= 9; i++){
             list.add(i);
-            dfs(res, list, i + 1, k - 1, n - i);
+            dfs(res, list, k - 1, n - i, i + 1);
             list.remove(list.size() - 1);
         }
     }
