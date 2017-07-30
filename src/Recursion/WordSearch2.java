@@ -17,33 +17,43 @@ public class WordSearch2 {
      * @return List of words existed in the dictionary
      */
     public List<String> wordSearch2(char[][] board, String[] words) {
+
         List<String> res = new ArrayList<>();
         TrieNode root = buildTrie(words);
+
         for(int row = 0; row < board.length; row++){
             for(int col = 0; col < board[row].length; col++){
                 dfs(board, res, root, row, col);
             }
         }
+
         return res;
     }
 
     private void dfs(char[][] board, List<String> res, TrieNode root, int row, int col){
+
         char c = board[row][col];
         if(c == '#' || root.next[c - 'a'] == null) return;
+
         root = root.next[c - 'a'];
-        // search to the end of a word
+
+        // 找到一个完整的word
         if(root.word != null){
             res.add(root.word);
+            // 去除duplicate
             root.word = null;
         }
-        // invalid
+
+        // 无效化字符
         board[row][col] = '#';
-        // next recursion
+
+        // 下一轮递归
         if(row > 0) dfs(board, res, root, row - 1, col);
         if(row < board.length - 1) dfs(board, res, root, row + 1, col);
         if(col > 0) dfs(board, res, root, row, col - 1);
         if(col < board[row].length - 1) dfs(board, res, root, row, col + 1);
-        // re-valid
+
+        // 重新有效化字符
         board[row][col] = c;
     }
 
