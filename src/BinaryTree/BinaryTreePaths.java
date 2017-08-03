@@ -20,11 +20,10 @@ public class BinaryTreePaths {
      * @return All paths from the root to the leaf node
      */
     public List<String> binaryTreePaths(TreeNode root) {
-        // create empty list as result
+
         List<String> res = new ArrayList<>();
-        // recursion
         helper(root, res, new StringBuilder());
-        // return result
+
         return res;
     }
 

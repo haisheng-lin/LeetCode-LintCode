@@ -10,26 +10,26 @@ public class ProductExcludeItself {
     /**
      * @see <a href="https://leetcode.com/problems/product-of-array-except-self/">LeetCode</a>
      *
-     * @param A An integers array A
-     * @return A Long array B and B[i]= A[0] * ... * A[i-1] * A[i+1] * ... * A[n-1]
+     * @param nums An integers array
+     * @return An array "output" such that output[i] is equal to the product of all the elements of nums except nums[i].
      */
-    public List<Long> productExcludeItself(List<Integer> A){
-        List<Long> list = new ArrayList<>();
-        long[] products = new long[A.size()];
-        // product from left
-        long left = 1;
-        for(int i = 0; i < A.size(); i++){
-            products[i] = left;
-            left *= A.get(i);
-        }
-        // product from right
-        long right = 1;
-        for(int i = A.size() - 1; i >= 0; i--){
-            products[i] *= right;
-            right *= A.get(i);
-        }
-        for(long num : products) list.add(num);
+    public int[] productExceptSelf(int[] nums) {
 
-        return list;
+        int[] product = new int[nums.length];
+        int left = 1, right = 1;
+
+        // 乘以元素以左的部分
+        for(int i = 0; i < nums.length; i++){
+            product[i] = left;
+            left *= nums[i];
+        }
+
+        // 乘以元素以右的部分
+        for(int i = nums.length - 1; i >= 0; i--){
+            product[i] *= right;
+            right *= nums[i];
+        }
+
+        return product;
     }
 }

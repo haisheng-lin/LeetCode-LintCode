@@ -3,7 +3,7 @@ package BinarySearch;
 /**
  * Created by Lin on 2017/2/12.
  */
-public class FindFirstBadVersion {
+public class FirstBadVersion {
     /**
      * @see <a href="https://leetcode.com/problems/first-bad-version/">LeetCode</a>
      *
@@ -11,12 +11,13 @@ public class FindFirstBadVersion {
      * @return An integer which is the first bad version
      */
     public int findFirstBadVersion(int n){
+
         int start = 1, end = n;
+
         while(start < end){
             int mid = start + (end - start) / 2; // prevent overflow
-            boolean midIsBad = isBadVersion(mid);
 
-            if(midIsBad) end = mid;
+            if(isBadVersion(mid)) end = mid;
             else start = mid + 1;
         }
 
