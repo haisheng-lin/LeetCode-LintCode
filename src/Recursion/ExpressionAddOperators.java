@@ -21,69 +21,28 @@ public class ExpressionAddOperators {
     public List<String> addOperators(String num, int target) {
 
         List<String> res = new ArrayList<>();
-        if(num.length() > 0) dfs(res, num, target, 0, new StringBuilder());
+        if(num.length() > 0) helper(res, num, target, "", 0, 0, 0);
 
         return res;
     }
 
-    private void dfs(List<String> res, String num, int target, int depth, StringBuilder sb) {
+    private void helper(List<String> res, String num, int target, String path, int depth, long eval, long multed) {
 
-        // corner case
-        if(depth == num.length() - 1) {
-            sb.append(num.charAt(depth));
-            if(getNum(sb) == target){
-                res.add(sb.toString());
-            }
+        if(depth == num.length()) {
+            if(eval == target) res.add(path);
             return;
         }
 
-        StringBuilder curSb = new StringBuilder(sb);
-        curSb.append(num.charAt(depth));
-
-        // Case 1: 如果字符为'0'且为前缀，不能与后面的数字结合，所以必须加操作符
-        StringBuilder sb1 = new StringBuilder(curSb);
-        sb1.append('+');
-        dfs(res, num, target, depth + 1, sb1);
-
-        StringBuilder sb2 = new StringBuilder(curSb);
-        sb2.append('-');
-        dfs(res, num, target, depth + 1, sb2);
-
-        StringBuilder sb3 = new StringBuilder(curSb);
-        sb3.append('*');
-        dfs(res, num, target, depth + 1, sb3);
-
-        // Case 2: 否则，可不加操作符
-        if(num.charAt(depth) != '0' || (sb.length() > 0 && Character.isDigit(sb.charAt(sb.length() - 1)))) {
-            StringBuilder sb4 = new StringBuilder(curSb);
-            dfs(res, num, target, depth + 1, sb4);
-        }
-    }
-
-    private int getNum(StringBuilder s) {
-
-        int len;
-        if(s == null || (len = s.length()) == 0) return 0;
-        Stack<Integer> stack = new Stack<>();
-        int num = 0;
-        char sign = '+';
-        for(int i=0;i<len;i++){
-            if(Character.isDigit(s.charAt(i))){
-                num = num*10+s.charAt(i)-'0';
-            }
-            if((!Character.isDigit(s.charAt(i)) &&' '!=s.charAt(i)) || i==len-1){
-                if(sign == '-') stack.push(-num);
-                if(sign == '+') stack.push(num);
-                if(sign == '*') stack.push(stack.pop() * num);
-                if(sign=='/') stack.push(stack.pop() / num);
-                sign = s.charAt(i);
-                num = 0;
+        for(int i = depth; i < num.length(); i++) {
+            if(num.charAt(depth) == '0' && i != depth) break;
+            long cur = Long.parseLong(num.substring(depth, i + 1));
+            if(depth == 0) {
+                helper(res, num, target, path + cur, i + 1, cur, cur);
+            } else {
+                helper(res, num, target, path + "+" + cur, i + 1, eval + cur, cur);
+                helper(res, num, target, path + "-" + cur, i + 1, eval - cur, -cur);
+                helper(res, num, target, path + "*" + cur, i + 1, eval - multed + multed * cur, multed * cur);
             }
         }
-
-        int re = 0;
-        for(int i : stack) re += i;
-
-        return re;
     }
 }
