@@ -7,7 +7,7 @@ import java.util.Arrays;
 /**
  * Created by Lin on 2017/7/3.
  */
-public class Subsets2 {
+public class SubsetsII {
     /**
      * Given a collection of integers that might contain duplicates, nums, return all possible subsets.
      * The solution set must not contain duplicate subsets.

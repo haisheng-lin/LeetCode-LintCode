@@ -3,7 +3,7 @@ package Others;
 /**
  * Created by Lin on 2017/6/27.
  */
-public class SpiralMatrix2 {
+public class SpiralMatrixII {
     /**
      * Given an integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
      *

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Created by Lin on 2017/2/13.
  */
-public class PathSum2 {
+public class PathSumII {
 
     /**
      * Here is an example for understanding the problem. Given a tree as follows:

@@ -5,7 +5,7 @@ import ClassPackage.ListNode;
 /**
  * Created by Lin on 2017/7/12.
  */
-public class LinkedListCycle2 {
+public class LinkedListCycleII {
     /**
      * Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
      *

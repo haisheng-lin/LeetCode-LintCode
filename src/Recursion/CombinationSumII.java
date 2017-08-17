@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Lin on 2017/2/12.
  */
-public class CombinationSum2 {
+public class CombinationSumII {
     /**
      * Given a collection of candidate numbers (C) and a target number (T), This method is to find all unique combinations in C where the candidate numbers sums to T.
      * Each number in C may only be used once in the combination.

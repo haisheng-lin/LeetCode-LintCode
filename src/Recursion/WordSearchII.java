@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * Created by Lin on 2017/2/12.
  */
-public class WordSearch2 {
+public class WordSearchII {
     /**
      * This method is used to find all words in the board, given a 2D board and a list of words from the dictionary.
      *

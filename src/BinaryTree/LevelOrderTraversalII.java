@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by Lin on 2017/7/6.
  */
-public class LevelOrderTraversal2 {
+public class LevelOrderTraversalII {
     /**
      * @see <a href="https://leetcode.com/problems/binary-tree-level-order-traversal-ii/#/description">LeetCode</a>
      *

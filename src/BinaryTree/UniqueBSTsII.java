@@ -7,7 +7,7 @@ import ClassPackage.TreeNode;
 /**
  * Created by Lin on 2017/7/4.
  */
-public class UniqueBSTs2 {
+public class UniqueBSTsII {
     /**
      * Given an integer n, generate all structurally unique BST's (binary search trees) that store values 1...n.
      *

@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * Created by Lin on 2017/7/29.
  */
-public class ContainsDuplicate2 {
+public class ContainsDuplicateII {
     /**
      * Given an array of integers and an integer k
      * find out whether there are two distinct indices i and j in the array

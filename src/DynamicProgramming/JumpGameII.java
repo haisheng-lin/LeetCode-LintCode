@@ -5,7 +5,7 @@ import com.sun.org.glassfish.gmbal.ManagedAttribute;
 /**
  * Created by Lin on 2017/5/13.
  */
-public class JumpGame2 {
+public class JumpGameII {
     /**
      * @see <a href="https://leetcode.com/problems/jump-game-ii/#/description">LeetCode</a>
      *

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * Created by Lin on 2017/2/15.
  */
-public class PascalTriangle2 {
+public class PascalTriangleII {
     /**
      * Given an index k, return the kth row of the Pascal's triangle.
      *

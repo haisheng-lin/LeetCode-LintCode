@@ -3,7 +3,7 @@ package Recursion;
 /**
  * Created by Lin on 2017/2/13.
  */
-public class PalindromePartitioning2 {
+public class PalindromePartitioningII {
     /**
      * Given a string s, partition s such that every substring of the partition is a palindrome.
      * Return the minimum cuts needed for a palindrome partitioning of s.

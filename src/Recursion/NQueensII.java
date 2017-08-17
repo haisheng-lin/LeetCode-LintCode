@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * Created by Lin on 2017/2/12.
  */
-public class NQueens2 {
+public class NQueensII {
     /**
      * This method is to find the total number of distinct solutions to the n-queens puzzle, given an integer n.
      * Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space respectively.

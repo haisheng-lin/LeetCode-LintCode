@@ -5,7 +5,7 @@ import ClassPackage.ListNode;
 /**
  * Created by Lin on 2017/2/12.
  */
-public class DeleteDuplicates2 {
+public class DeleteDuplicatesII {
     /**
      * This method is to delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
      *

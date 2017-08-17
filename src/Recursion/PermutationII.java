@@ -8,7 +8,7 @@ import java.util.HashSet;
 /**
  * Created by Lin on 2017/2/12.
  */
-public class Permutation2 {
+public class PermutationII {
     /**
      * This method is to find all unique permutations, given a collection of distinct numbers.
      *
