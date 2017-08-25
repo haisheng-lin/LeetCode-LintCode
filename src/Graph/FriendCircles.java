@@ -10,6 +10,8 @@ import java.util.Set;
  */
 public class FriendCircles {
 
+    /***************************************** My Version *****************************************/
+
     int unionNo = 0;
 
     /**
@@ -68,5 +70,80 @@ public class FriendCircles {
                 if(friendMap.get(student) == u2) friendMap.put(student, u1);
             }
         }
+    }
+
+    /***************************************** Best Version *****************************************/
+
+    class UnionFind {
+
+        private int count;
+        private int[] parent, rank;
+
+        public UnionFind(int n) {
+
+            parent = new int[n];
+            rank = new int[n];
+            count = n;
+
+            for(int i = 0; i < parent.length; i++) {
+                parent[i] = i;
+            }
+        }
+
+        public int findParent(int p) {
+
+            while(p != parent[p]) {
+                parent[p] = parent[parent[p]];
+                p = parent[p];
+            }
+
+            return p;
+        }
+
+        public void union(int p, int q) {
+
+            int rootP = findParent(p);
+            int rootQ = findParent(q);
+            if(rootP == rootQ) return;
+
+            if(rank[rootP] < rank[rootQ]) {
+                parent[rootP] = rootQ;
+            } else {
+                parent[rootQ] = rootP;
+                if(rank[rootP] == rank[rootQ]) rank[rootP]++;
+            }
+
+            count--;
+        }
+
+        public int count() {
+            return count;
+        }
+    }
+
+    /**
+     * There are N students in a class. Some of them are friends, while some are not. Their friendship is transitive in nature
+     * We defined a friend circle is a group of students who are direct or indirect friends
+     * Given a N*N matrix M representing the friend relationship between students in the class
+     * If M[i][j] = 1, then the ith and jth students are direct friends with each other, otherwise not
+     * Output the total number of friend circles among all the students
+     *
+     * @see <a href="https://leetcode.com/problems/friend-circles/">LeetCode</a>
+     *
+     * @param M 2D integer array
+     * @return Number of friend circles
+     */
+    public int findCircleNum2(int[][] M) {
+
+        int n = M.length;
+        UnionFind uf = new UnionFind(n);
+
+        for(int i = 0; i < n; i++) {
+            for(int j = i + 1; j < n; j++) {
+                if(M[i][j] == 1) uf.union(i, j);
+            }
+        }
+
+        return uf.count();
     }
 }
