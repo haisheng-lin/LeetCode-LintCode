@@ -1,12 +1,14 @@
-import Recursion.BinaryWatch;
+import Array.TaskScheduler;
 
 /**
  * Created by Lin on 2017/2/12.
  */
 public class Main {
     public static void main(String[] args){
-        int count = 2;
-        BinaryWatch test = new BinaryWatch();
-        test.readBinaryWatch(count);
+
+        TaskScheduler ts = new TaskScheduler();
+        char[] tasks = {'A','A','B','B','B','A'};
+
+        ts.leastInterval(tasks, 2);
     }
 }
