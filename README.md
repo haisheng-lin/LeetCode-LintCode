@@ -1,6 +1,4 @@
-### LeetCode & LintCode
-
----
+## LeetCode & LintCode
 
 Solutions to [LeetCode](https://leetcode.com/problemset/all/) and [LintCode](http://lintcode.com/en/problem/) in Java.
 
