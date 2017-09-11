@@ -12,7 +12,7 @@ public class SetMismatch {
      *
      * @see <a href="https://leetcode.com/problems/set-mismatch/">LeetCode</a>
      *
-     * @param nums The root of binary tree
+     * @param nums Integer array
      * @return Array in which first number is duplicate number and the second one is the number that missing
      */
     public int[] findErrorNums(int[] nums) {

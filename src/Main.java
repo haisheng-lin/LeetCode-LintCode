@@ -1,4 +1,4 @@
-import Array.TaskScheduler;
+import Recursion.PacificAtlanticWaterFlow;
 
 /**
  * Created by Lin on 2017/2/12.
@@ -6,9 +6,11 @@ import Array.TaskScheduler;
 public class Main {
     public static void main(String[] args){
 
-        TaskScheduler ts = new TaskScheduler();
-        char[] tasks = {'A','A','B','B','B','A'};
+        int[][] matrix = {{1,2,2,3,5},{3,2,3,4,4},{2,4,5,3,1},{6,7,1,4,5},{5,1,1,2,4}};
+        // int[][] matrix = {{1,2},{3,2},{2,4}};
 
-        ts.leastInterval(tasks, 2);
+        PacificAtlanticWaterFlow obj = new PacificAtlanticWaterFlow();
+
+        obj.pacificAtlantic(matrix);
     }
 }
